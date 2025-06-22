@@ -252,55 +252,158 @@ head {
     transition: background-color 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #1a468c;
 }
 
-.my-slider-section {
-    background: linear-gradient(to right, #1d1c1c, #1d1c1c);
+
+
+#my-slider-section {
     padding: 50px 20px;
-    color: white;
+    color: rgb(211, 119, 119);
     text-align: center;
-  }
-  
-  .swiper {
+    border: solid 2px rgb(255, 255, 255);
+
+}
+
+#my-slider-section h2{
+    display: flex;
+    border: solid 2px rgb(255, 255, 255);
+}
+
+
+.swiper {
+    /* border: solid 2px beige; */
+    margin: 2%;
+    margin-top: 20px;
     padding: 30px 0;
-  }
-  
+
+}
 
 
-  .card {
-    background-color: #1a1a2e;
-    border-radius: 40px 20px;
+
+.card {
+    margin: 3%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    border-radius: 15px;
     padding: 30px;
     height: 100%;
     text-align: center;
     transition: transform 0.3s ease;
-    color: white;
-    border:1px #000000 solid;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: scale(1.05);
-  }
-  
-  .card img {
+}
+
+.card img {
     width: 50px;
 
     margin-bottom: 15px;
-  }
-  
-  .swiper-pagination-bullet {
+}
+
+.swiper-pagination-bullet {
     background-color: #fff;
     opacity: 0.4;
-  }
-  
-  .swiper-pagination-bullet-active {
+}
+
+.swiper-pagination-bullet-active {
     background-color: #ffffff;
     opacity: 1;
-  }
-  
-  .card, .card-link {
+}
+
+.card,
+.card-link {
     pointer-events: auto;
     z-index: auto;
-  }
+    display: block;
+}
+
+
+#fill-box {
+    padding: 30px;
+    margin: auto;
+    height: auto;
+    width: 50%;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    background-color: #fafafa52;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+form h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+}
+
+.form-group,
+.form-control {
+    padding: 10px 70px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+label {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #ebebeb;
+    border: 1px solid #000000;
+}
+
+
+.footer-box {
+    padding: 20px 50px;
+    margin: 3px;
+    height: 40vh;
+    width: auto;
+    border: 1px solid beige;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+
+    background-image: url('Images/footer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.card-body{
+    padding:20px 50px;
+    border: 1px  #ffffff solid;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.card-section{
+    padding: 30px;
+    margin: auto;
+    width: auto;
+    border: #000000 solid 1px ;
+}

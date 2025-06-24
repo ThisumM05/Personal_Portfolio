@@ -52,6 +52,8 @@ const observer = new IntersectionObserver(function (entries) {
   threshold: 0.2
 });
 
+
+
 const elements = document.querySelectorAll('.slide-in-left ,.slide-in-right');
 
 elements.forEach(function (el) {

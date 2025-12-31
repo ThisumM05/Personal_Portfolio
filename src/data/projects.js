@@ -10,7 +10,7 @@ export const projects = [
     summary: 'End-to-end platform to manage events, tickets, and payments with reliable seat inventory.',
     tech: ['C#', '.NET', 'React', 'SQL Server'],
     imageUrl: onlineEventTicketingImage,
-    githubUrl: '#', // TODO: replace with actual GitHub URL
+    githubUrl: '', // TODO: replace with actual GitHub URL
     liveUrl: '#', // TODO: replace with Live Demo or Case Study URL
   },
   {
@@ -19,7 +19,7 @@ export const projects = [
     summary: 'Scheduling and shift-handling system to keep teams aligned and operations predictable.',
     tech: ['Java', 'Spring', 'MySQL'],
     imageUrl: eShiftManagementImage,
-    githubUrl: '#',
+    githubUrl: 'https://github.com/ThisumM05/Eshift_Management_System.git',
     liveUrl: '#',
   },
   {
@@ -28,7 +28,7 @@ export const projects = [
     summary: 'Clinical workflow and patient record management built for consistency and traceability.',
     tech: ['C#', '.NET', 'SQL Server'],
     imageUrl: medicareManagementImage,
-    githubUrl: '#',
+    githubUrl: 'https://github.com/ThisumM05/MediCare_Pvt_Ltd.git',
     liveUrl: '#',
   },
   {
@@ -37,7 +37,7 @@ export const projects = [
     summary: 'Order and inventory management for food services, connecting menus, orders, and kitchens.',
     tech: ['React', 'Node.js', 'MySQL'],
     imageUrl: foodhubManagementImage,
-    githubUrl: '#',
+    githubUrl: '',
     liveUrl: '#',
   },
 ]

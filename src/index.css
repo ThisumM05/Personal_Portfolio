@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.cjs";
+
+@layer base {
+  html,
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .gradient-border {
+    background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.7), transparent 55%),
+      radial-gradient(circle at bottom right, rgba(79, 70, 229, 0.9), transparent 55%);
+  }
+
+  .card-surface {
+    @apply bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-[0_18px_45px_rgba(0,0,0,0.55)];
+  }
+
+  .pill-badge {
+    @apply inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/60 px-3 py-1 text-xs font-medium text-slate-200 tracking-wide;
+  }
+
+  .bg-animated-gradient {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(79, 70, 229, 0.9), transparent 55%),
+      radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.7), transparent 55%),
+      radial-gradient(circle at 0% 100%, rgba(147, 51, 234, 0.7), transparent 55%);
+    background-size: 200% 200%;
+    animation: gradientShift 28s ease-in-out infinite alternate;
+  }
+
+  .bg-noise-overlay {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.018) 0px,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+
+  .hero-glow {
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.95), transparent 60%);
+    filter: blur(42px);
+  }
+
+  .project-card {
+    @apply transition-transform transition-opacity duration-300 ease-out;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-animated-gradient {
+    animation: none;
+  }
+}

@@ -2,6 +2,7 @@ import onlineEventTicketingImage from '../assets/online-event-ticketing-system.p
 import eShiftManagementImage from '../assets/e-shift-management-system.png'
 import medicareManagementImage from '../assets/medicare-management-system.png'
 import foodhubManagementImage from '../assets/foodhub-management-system.png'
+import hotelReservationImage from '../assets/hotel-reservation-system.png'
 
 export const projects = [
   {
@@ -11,7 +12,7 @@ export const projects = [
     tech: ['C#', '.NET', 'React', 'SQL Server'],
     imageUrl: onlineEventTicketingImage,
     githubUrl: 'https://github.com/ThisumM05/StarEvents_Pvt_Ltd_Management_System.git', // TODO: replace with actual GitHub URL
-    liveUrl: '#', // TODO: replace with Live Demo or Case Study URL
+    liveUrl: 'https://thisumm05.github.io/StarEvents_Pvt_Ltd_Management_System', // TODO: replace with Live Demo or Case Study URL
   },
   {
     slug: 'e-shift-management-system',
@@ -45,8 +46,8 @@ export const projects = [
     title: 'Hotel Reservation System',
     summary: 'An all-in-one hotel management system for bookings, staff operations, manager analytics, bulk travel bookings, and automation.',
     tech: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL'],
-    imageUrl: foodhubManagementImage,
+    imageUrl: hotelReservationImage,
     githubUrl: 'https://github.com/ThisumM05/Hotel_Management.git',
-    liveUrl: '#',
+    liveUrl: 'https://thisumm05.github.io/Hotel_Management',
   },
 ]

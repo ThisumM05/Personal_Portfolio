@@ -10,7 +10,7 @@ export const projects = [
     summary: 'End-to-end platform to manage events, tickets, and payments with reliable seat inventory.',
     tech: ['C#', '.NET', 'React', 'SQL Server'],
     imageUrl: onlineEventTicketingImage,
-    githubUrl: '', // TODO: replace with actual GitHub URL
+    githubUrl: 'https://github.com/ThisumM05/StarEvents_Pvt_Ltd_Management_System.git', // TODO: replace with actual GitHub URL
     liveUrl: '#', // TODO: replace with Live Demo or Case Study URL
   },
   {
@@ -37,7 +37,16 @@ export const projects = [
     summary: 'Order and inventory management for food services, connecting menus, orders, and kitchens.',
     tech: ['React', 'Node.js', 'MySQL'],
     imageUrl: foodhubManagementImage,
-    githubUrl: '',
+    githubUrl: 'https://github.com/ThisumM05/FoodHub_Management_System.git',
+    liveUrl: '#',
+  },
+  {
+    slug: 'hotel-reservation-system',
+    title: 'Hotel Reservation System',
+    summary: 'An all-in-one hotel management system for bookings, staff operations, manager analytics, bulk travel bookings, and automation.',
+    tech: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL'],
+    imageUrl: foodhubManagementImage,
+    githubUrl: 'https://github.com/ThisumM05/Hotel_Management.git',
     liveUrl: '#',
   },
 ]

@@ -4,12 +4,14 @@ import { MagneticButton } from './MagneticButton'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (index) => ({
+  visible: () => ({
     opacity: 1,
     y: 0,
-    transition: { delay: index * 0.12, duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+    transition: {  },
   }),
 }
+
+const MotionSection = motion.section
 
 export function ProjectCard({ project, index }) {
   const shouldReduceMotion = useReducedMotion()

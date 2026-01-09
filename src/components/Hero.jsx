@@ -5,10 +5,13 @@ import { Typewriter } from 'react-simple-typewriter'
 import { MagneticButton } from './MagneticButton'
 import profileImage from '../assets/images.jpeg'
 import cvPdf from '../assets/Thanuja Thisum Madappuli.pdf'
+
 const heroVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] } },
 }
+
+const MotionDiv = motion.div
 
 const stats = [
   { label: 'Months of experience', value: 6 },
@@ -53,7 +56,7 @@ export function Hero() {
 
   return (
     <section className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
-      <motion.div variants={heroVariants}>
+      <MotionDiv variants={heroVariants}>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-300">
           Software Engineer × Designer
         </p>
@@ -108,14 +111,14 @@ export function Hero() {
             <Stat key={stat.label} label={stat.label} value={stat.value} />
           ))}
         </div>
-      </motion.div>
+      </MotionDiv>
 
-      <motion.div
+      <MotionDiv
         variants={heroVariants}
         className="relative max-w-md justify-self-center md:justify-self-end"
       >
         <div className="flex justify-center">
-          <motion.div
+          <MotionDiv
             initial={shouldReduceMotion ? undefined : { opacity: 0, scale: 1.05 }}
             animate={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
@@ -127,9 +130,9 @@ export function Hero() {
               className="h-72 w-full object-cover sm:h-80"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent" />
-          </motion.div>
+          </MotionDiv>
         </div>
-      </motion.div>
+      </MotionDiv>
     </section>
   )
 }

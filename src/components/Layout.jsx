@@ -10,6 +10,8 @@ const containerVariants = {
     },
   },
 }
+const MotionSection = motion.section
+
 
 export function Layout({ children }) {
   const shouldReduceMotion = useReducedMotion()

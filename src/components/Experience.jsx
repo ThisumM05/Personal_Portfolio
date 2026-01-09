@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { SectionHeader } from './SectionHeader'
 import { MagneticButton } from './MagneticButton'
 import cvPdf from '../assets/Thanuja Thisum Madappuli.pdf'
+import serviceLetterPdf from '../assets/T Thisum Madappuli Service Letter.pdf'
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -12,9 +13,11 @@ const sectionVariants = {
   },
 }
 
+const MotionSection = motion.section
+
 export function Experience() {
   return (
-    <motion.section
+    <MotionSection
       variants={sectionVariants}
       id="experience"
       className="flex flex-col gap-5"
@@ -42,7 +45,7 @@ export function Experience() {
             <div className="mt-4 flex flex-wrap gap-3 text-xs font-medium">
               <MagneticButton
                 as="a"
-                href="/Thanuja Thisum Madappuli Service Letter.pdf"
+                href={serviceLetterPdf}
                 download
                 aria-label="Download Service Letter as PDF"
                 className="inline-flex items-center justify-center rounded-full bg-indigo-500 px-5 py-2 text-xs font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:bg-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
@@ -61,6 +64,6 @@ export function Experience() {
           </article>
         </div>
       </div>
-    </motion.section>
+    </MotionSection>
   )
 }

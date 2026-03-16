@@ -1,10 +1,20 @@
-import onlineEventTicketingImage from '../assets/online-event-ticketing-system.png'
-import eShiftManagementImage from '../assets/e-shift-management-system.png'
+import onlineEventTicketingImage from '../assets/online-event-ticketing-system.jpg'
+import eShiftManagementImage from '../assets/e-shift-management-system.jpg'
 import medicareManagementImage from '../assets/medicare-management-system.png'
-import foodhubManagementImage from '../assets/foodhub-management-system.png'
-import hotelReservationImage from '../assets/hotel-reservation-system.png'
+import foodhubManagementImage from '../assets/foodhub-management-system.jpg'
+import hotelReservationImage from '../assets/hotel-reservation-system.jpg'
+import mosBurgerImage from '../assets/mos-burger-restaurant-system.jpg'
 
 export const projects = [
+  {
+    slug: 'mos-burger-restaurant-system',
+    title: 'MOS Burger Restaurant Management System',
+    summary: 'Full-stack restaurant platform with role-based access for customers, staff, and admins.',
+    tech: ['React', 'Redux', 'Django', 'MySQL'],
+    imageUrl: mosBurgerImage,
+    githubUrl: 'https://github.com/ThisumM05/MOS_Bruger.git', // TODO: replace with actual GitHub URL
+    liveUrl: 'https://thisumm05.github.io/MOS_Bruger/', // TODO: replace with Live Demo or Case Study URL
+  },
   {
     slug: 'online-event-ticketing-system',
     title: 'Online Event Ticketing System',

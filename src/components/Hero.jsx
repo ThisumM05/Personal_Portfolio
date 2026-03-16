@@ -1,44 +1,54 @@
-import { useEffect, useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
-import { Typewriter } from 'react-simple-typewriter'
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
-import { MagneticButton } from './MagneticButton'
-import profileImage from '../assets/images.jpeg'
-import cvPdf from '../assets/Thanuja Thisum Madappuli.pdf'
+import { MagneticButton } from "./MagneticButton";
+import profileImage from "../assets/images.jpg";
+import cvPdf from "../assets/Thanuja Thisum Madappuli.pdf";
 
 const heroVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] } },
-}
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+  },
+};
 
-const MotionDiv = motion.div
+const MotionDiv = motion.div;
 
 const stats = [
-  { label: 'Months of experience', value: 6 },
-  { label: 'Projects delivered', value: 4 },
-]
+  { label: "Months of experience", value: 6 },
+  { label: "Projects delivered", value: 4 },
+];
+
+const roles = [
+  { text: "Software Engineer", colorClass: "text-indigo-300" },
+  { text: "Graphic Designer", colorClass: "text-emerald-300" },
+  { text: "Event Planner", colorClass: "text-amber-300" },
+];
 
 function Stat({ label, value }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let current = 0
-    const duration = 1200
-    const frameDuration = 1000 / 60
-    const totalFrames = Math.round(duration / frameDuration)
-    const increment = value / totalFrames
+    let current = 0;
+    const duration = 1200;
+    const frameDuration = 1000 / 60;
+    const totalFrames = Math.round(duration / frameDuration);
+    const increment = value / totalFrames;
 
     const interval = setInterval(() => {
-      current += increment
+      current += increment;
       if (current >= value) {
-        current = value
-        clearInterval(interval)
+        current = value;
+        clearInterval(interval);
       }
-      setCount(Math.round(current))
-    }, frameDuration)
+      setCount(Math.round(current));
+    }, frameDuration);
 
-    return () => clearInterval(interval)
-  }, [value])
+    return () => clearInterval(interval);
+  }, [value]);
 
   return (
     <div className="flex flex-col">
@@ -46,25 +56,67 @@ function Stat({ label, value }) {
         {count}
         <span className="text-indigo-300">+</span>
       </span>
-      <span className="mt-1 text-[11px] uppercase tracking-[0.18em] text-slate-400">{label}</span>
+      <span className="mt-1 text-[11px] uppercase tracking-[0.18em] text-slate-400">
+        {label}
+      </span>
     </div>
-  )
+  );
+}
+
+function RotatingRoleTypewriter() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex].text;
+
+    const typingSpeed = isDeleting ? 45 : 85;
+    const delayAfterType = 1300;
+    const delayAfterDelete = 260;
+
+    let timeout;
+
+    if (!isDeleting && displayText === currentRole) {
+      timeout = setTimeout(() => setIsDeleting(true), delayAfterType);
+    } else if (isDeleting && displayText === "") {
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }, delayAfterDelete);
+    } else {
+      timeout = setTimeout(() => {
+        const nextText = isDeleting
+          ? currentRole.slice(0, displayText.length - 1)
+          : currentRole.slice(0, displayText.length + 1);
+        setDisplayText(nextText);
+      }, typingSpeed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, roleIndex]);
+
+  return (
+    <p className={`mt-2 text-sm font-medium ${roles[roleIndex].colorClass}`}>
+      {displayText}
+      <span className="ml-0.5 animate-pulse text-slate-200">|</span>
+    </p>
+  );
 }
 
 export function Hero() {
-  const shouldReduceMotion = useReducedMotion()
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
-      <MotionDiv variants={heroVariants}>
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-300">
-          Software Engineer × Designer
-        </p>
+      <MotionDiv variants={heroVariants} className="text-justify">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
-          <span className="block text-sm font-normal text-indigo-200 sm:text-base">Hi, I&apos;m</span>
-          <span className="block">
+          <span className="block text-sm font-normal text-indigo-200 sm:text-base">
+            Hi, I&apos;m
+          </span>
+          <span className="block w-fit max-w-full whitespace-nowrap">
             <Typewriter
-              words={['Thanuja Thisum Madappuli']}
+              words={["Thanuja Thisum Madappuli"]}
               cursor
               cursorStyle="_"
               typeSpeed={70}
@@ -74,10 +126,11 @@ export function Hero() {
             />
           </span>
         </h1>
-        <p className="mt-2 text-sm font-medium text-indigo-200">Software Engineer</p>
+        <RotatingRoleTypewriter />
         <p className="mt-4 max-w-xl text-sm text-slate-300">
-          I design and build reliable systems with clean, maintainable architectures — from backend services to
-          interfaces that stay out of the way.
+          I design and build reliable systems with clean, maintainable
+          architectures — from backend services to interfaces that stay out of
+          the way.
         </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
@@ -118,21 +171,30 @@ export function Hero() {
         className="relative max-w-md justify-self-center md:justify-self-end"
       >
         <div className="flex justify-center">
-          <MotionDiv
-            initial={shouldReduceMotion ? undefined : { opacity: 0, scale: 1.05 }}
-            animate={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
-            className="relative w-full max-w-sm overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 shadow-xl shadow-black/60"
-          >
-            <img
-              src={profileImage}
-              alt="Portrait of Thanuja Thisum Madappuli"
-              className="h-72 w-full object-cover sm:h-80"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent" />
-          </MotionDiv>
+          <div className="relative isolate w-full max-w-sm">
+            <div className="pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-white/20 via-sky-300/15 to-indigo-300/20 blur-2xl" />
+            <div className="pointer-events-none absolute -inset-1 -z-10 rounded-[1.8rem] border border-white/15 bg-white/5 backdrop-blur-md" />
+            <MotionDiv
+              initial={
+                shouldReduceMotion ? undefined : { opacity: 0, scale: 1.05 }
+              }
+              animate={
+                shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }
+              }
+              transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
+              className="relative w-full overflow-hidden rounded-3xl border border-slate-700/70 bg-transparent shadow-xl shadow-black/50"
+            >
+              <img
+                src={profileImage}
+                alt="Portrait of Thanuja Thisum Madappuli"
+                className="h-72 w-full object-cover sm:h-80"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-white/10" />
+              <div className="pointer-events-none absolute left-6 right-6 top-4 h-10 rounded-full bg-white/20 blur-xl" />
+            </MotionDiv>
+          </div>
         </div>
       </MotionDiv>
     </section>
-  )
+  );
 }

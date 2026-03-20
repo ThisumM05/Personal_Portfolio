@@ -1,20 +1,20 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from "framer-motion";
 
-import { MagneticButton } from './MagneticButton'
+import { MagneticButton } from "./MagneticButton";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: () => ({
     opacity: 1,
     y: 0,
-    transition: {  },
+    transition: {},
   }),
-}
+};
 
-const MotionSection = motion.section
+const MotionSection = motion.section;
 
 export function ProjectCard({ project, index }) {
-  const shouldReduceMotion = useReducedMotion()
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.article
@@ -24,16 +24,18 @@ export function ProjectCard({ project, index }) {
       whileHover={shouldReduceMotion ? undefined : { y: -6 }}
     >
       <div>
-        <div className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/70">
-          {project.imageUrl ? (
+        <div
+          className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/70"
+          style={{ aspectRatio: "13/8" }}
+        >
+          {project.animUrl ? (
             <img
-              src={project.imageUrl}
+              src={project.animUrl}
               alt={project.title}
-              className="h-32 w-full object-cover"
+              className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
             />
           ) : (
-            <div className="flex h-40 items-center justify-center text-[11px] text-slate-500">
-              {/* Add a project image by setting project.imageUrl in data/projects.js */}
+            <div className="flex h-full items-center justify-center text-[11px] text-slate-500">
               Project visual placeholder
             </div>
           )}
@@ -78,5 +80,5 @@ export function ProjectCard({ project, index }) {
         </MagneticButton>
       </div>
     </motion.article>
-  )
+  );
 }

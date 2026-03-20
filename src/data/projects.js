@@ -5,13 +5,21 @@ import foodhubManagementImage from '../assets/foodhub-management-system.jpg'
 import hotelReservationImage from '../assets/hotel-reservation-system.jpg'
 import mosBurgerImage from '../assets/mos-burger-restaurant-system.jpg'
 
+import animBurger from '../assets/anim-burger.svg'
+import animStarEvents from '../assets/anim-starevents.svg'
+import animEShift from '../assets/anim-eshift.svg'
+import animMedicare from '../assets/anim-medicare.svg'
+import animFoodhub from '../assets/anim-foodhub.svg'
+import animFashion from '../assets/anim-fashion.svg'
+
 export const projects = [
   {
-    slug: 'mos-burger-restaurant-system',
-    title: 'MOS Burger Restaurant Management System',
+    slug: 'mos-burger-system',
+    title: 'MOS Burger System',
     summary: 'Full-stack restaurant platform with role-based access for customers, staff, and admins.',
     tech: ['React', 'Redux', 'Django', 'MySQL'],
     imageUrl: mosBurgerImage,
+    animUrl: animBurger,
     githubUrl: 'https://github.com/ThisumM05/MOS_Bruger.git', // TODO: replace with actual GitHub URL
     liveUrl: 'https://thisumm05.github.io/MOS_Bruger/', // TODO: replace with Live Demo or Case Study URL
   },
@@ -21,6 +29,7 @@ export const projects = [
     summary: 'End-to-end platform to manage events, tickets, and payments with reliable seat inventory.',
     tech: ['C#', '.NET', 'React', 'SQL Server'],
     imageUrl: onlineEventTicketingImage,
+    animUrl: animStarEvents,
     githubUrl: 'https://github.com/ThisumM05/StarEvents_Pvt_Ltd_Management_System.git', // TODO: replace with actual GitHub URL
     liveUrl: 'https://thisumm05.github.io/StarEvents_Pvt_Ltd_Management_System', // TODO: replace with Live Demo or Case Study URL
   },
@@ -30,6 +39,7 @@ export const projects = [
     summary: 'Scheduling and shift-handling system to keep teams aligned and operations predictable.',
     tech: ['Java', 'Spring', 'MySQL'],
     imageUrl: eShiftManagementImage,
+    animUrl: animEShift,
     githubUrl: 'https://github.com/ThisumM05/Eshift_Management_System.git',
     liveUrl: '#',
   },
@@ -39,6 +49,7 @@ export const projects = [
     summary: 'Clinical workflow and patient record management built for consistency and traceability.',
     tech: ['C#', '.NET', 'SQL Server'],
     imageUrl: medicareManagementImage,
+    animUrl: animMedicare,
     githubUrl: 'https://github.com/ThisumM05/MediCare_Pvt_Ltd.git',
     liveUrl: '#',
   },
@@ -48,6 +59,7 @@ export const projects = [
     summary: 'Order and inventory management for food services, connecting menus, orders, and kitchens.',
     tech: ['React', 'Node.js', 'MySQL'],
     imageUrl: foodhubManagementImage,
+    animUrl: animFoodhub,
     githubUrl: 'https://github.com/ThisumM05/FoodHub_Management_System.git',
     liveUrl: '#',
   },
@@ -57,6 +69,7 @@ export const projects = [
     summary: 'An all-in-one hotel management system for bookings, staff operations, manager analytics, bulk travel bookings, and automation.',
     tech: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL'],
     imageUrl: hotelReservationImage,
+    animUrl: animFashion,
     githubUrl: 'https://github.com/ThisumM05/Hotel_Management.git',
     liveUrl: 'https://thisumm05.github.io/Hotel_Management',
   },

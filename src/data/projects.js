@@ -11,6 +11,8 @@ import animEShift from '../assets/anim-eshift.svg'
 import animMedicare from '../assets/anim-medicare.svg'
 import animFoodhub from '../assets/anim-foodhub.svg'
 import animFashion from '../assets/anim-fashion.svg'
+import animSpeechTherapy from '../assets/anim-speechtherapy.svg'
+import animFarmInvest from '../assets/anim-farminvest.svg'
 
 export const projects = [
   {
@@ -22,6 +24,15 @@ export const projects = [
     animUrl: animBurger,
     githubUrl: 'https://github.com/ThisumM05/MOS_Bruger.git', // TODO: replace with actual GitHub URL
     liveUrl: 'https://thisumm05.github.io/MOS_Bruger/', // TODO: replace with Live Demo or Case Study URL
+  },
+  {
+    slug: 'ai-speech-therapy',
+    title: 'AI-Powered Speech Therapy',
+    summary: 'Full-stack speech therapy platform with real-time voice and facial analysis tracking phoneme accuracy and articulation patterns.',
+    tech: ['React', 'Node.js', 'Express', 'MariaDB'],
+    animUrl: animSpeechTherapy,
+    githubUrl: '#',
+    liveUrl: '#',
   },
   {
     slug: 'online-event-ticketing-system',
@@ -72,5 +83,14 @@ export const projects = [
     animUrl: animFashion,
     githubUrl: 'https://github.com/ThisumM05/Hotel_Management.git',
     liveUrl: 'https://thisumm05.github.io/Hotel_Management',
+  },
+  {
+    slug: 'farminvest-lite',
+    title: 'FarmInvest Lite',
+    summary: 'AI-powered farm investment platform with ML-based crop yield prediction.',
+    tech: ['React Native', 'Express', 'TypeScript', 'MySQL'],
+    animUrl: animFarmInvest,
+    githubUrl: '#',
+    liveUrl: '#',
   },
 ]

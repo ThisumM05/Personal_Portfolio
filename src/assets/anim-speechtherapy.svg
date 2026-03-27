@@ -1,0 +1,32 @@
+<svg width="260" height="160" viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#001020"/>
+    <stop offset="100%" stop-color="#001e38"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0%" stop-color="#00AAFF" stop-opacity="0.22"/>
+    <stop offset="100%" stop-color="#001020" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="260" height="160" rx="12" fill="url(#bg)"/>
+<rect width="260" height="160" rx="12" fill="url(#glow)"/>
+<rect x="1.5" y="1.5" width="257" height="157" rx="11" fill="none" stroke="#00AAFF" stroke-width="2"><animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2.6s" repeatCount="indefinite"/></rect>
+<circle cx="20" cy="20" r="4" fill="#00AAFF"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.1s" repeatCount="indefinite"/></circle>
+<circle cx="240" cy="20" r="3" fill="#66D4FF"><animate attributeName="opacity" values="0.5;1;0.5" dur="1.7s" repeatCount="indefinite"/></circle>
+<circle cx="20" cy="140" r="3" fill="#66D4FF"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite"/></circle>
+<circle cx="240" cy="140" r="4" fill="#00AAFF"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="1.9s" repeatCount="indefinite"/></circle>
+<g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-9; 0,0" dur="3s" repeatCount="indefinite" calcMode="ease-in-out"/>
+<text x="130" y="68" font-size="44" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI Emoji,Apple Color Emoji,Noto Color Emoji,sans-serif">&#x1F399;</text></g>
+<!-- Animated sound-wave bars -->
+<rect x="96" y="94" width="5" height="8" rx="2" fill="#00AAFF" opacity="0.75"><animate attributeName="height" values="4;14;4" dur="0.65s" repeatCount="indefinite"/><animate attributeName="y" values="97;91;97" dur="0.65s" repeatCount="indefinite"/></rect>
+<rect x="106" y="91" width="5" height="14" rx="2" fill="#66D4FF" opacity="0.85"><animate attributeName="height" values="14;4;14" dur="0.65s" repeatCount="indefinite"/><animate attributeName="y" values="91;97;91" dur="0.65s" repeatCount="indefinite"/></rect>
+<rect x="116" y="94" width="5" height="8" rx="2" fill="#00AAFF" opacity="0.75"><animate attributeName="height" values="6;16;6" dur="0.8s" repeatCount="indefinite"/><animate attributeName="y" values="96;89;96" dur="0.8s" repeatCount="indefinite"/></rect>
+<rect x="126" y="91" width="5" height="14" rx="2" fill="#66D4FF" opacity="0.9"><animate attributeName="height" values="14;5;14" dur="0.55s" repeatCount="indefinite"/><animate attributeName="y" values="91;97;91" dur="0.55s" repeatCount="indefinite"/></rect>
+<rect x="136" y="94" width="5" height="8" rx="2" fill="#00AAFF" opacity="0.75"><animate attributeName="height" values="4;16;4" dur="0.72s" repeatCount="indefinite"/><animate attributeName="y" values="97;89;97" dur="0.72s" repeatCount="indefinite"/></rect>
+<rect x="146" y="91" width="5" height="14" rx="2" fill="#66D4FF" opacity="0.85"><animate attributeName="height" values="12;4;12" dur="0.68s" repeatCount="indefinite"/><animate attributeName="y" values="92;98;92" dur="0.68s" repeatCount="indefinite"/></rect>
+<rect x="156" y="94" width="5" height="8" rx="2" fill="#00AAFF" opacity="0.75"><animate attributeName="height" values="5;13;5" dur="0.6s" repeatCount="indefinite"/><animate attributeName="y" values="96;91;96" dur="0.6s" repeatCount="indefinite"/></rect>
+<line x1="45" y1="112" x2="215" y2="112" stroke="#00AAFF" stroke-width="0.6" stroke-opacity="0.5"/>
+<text x="130" y="127" font-size="13.5" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">AI Speech Therapy</text>
+<text x="130" y="146" font-size="10" fill="#66D4FF" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">TensorFlow &#xB7; OpenCV</text>
+</svg>

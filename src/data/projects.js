@@ -22,8 +22,8 @@ export const projects = [
     tech: ['React', 'Redux', 'Django', 'MySQL'],
     imageUrl: mosBurgerImage,
     animUrl: animBurger,
-    githubUrl: 'https://github.com/ThisumM05/MOS_Bruger.git', // TODO: replace with actual GitHub URL
-    liveUrl: 'https://thisumm05.github.io/MOS_Bruger/', // TODO: replace with Live Demo or Case Study URL
+    githubUrl: 'https://github.com/ThisumM05/MOS_Bruger',
+    liveUrl: 'https://thisumm05.github.io/MOS_Bruger/',
   },
   {
     slug: 'ai-speech-therapy',
@@ -31,8 +31,8 @@ export const projects = [
     summary: 'Full-stack speech therapy platform with real-time voice and facial analysis tracking phoneme accuracy and articulation patterns.',
     tech: ['React', 'Node.js', 'Express', 'MariaDB'],
     animUrl: animSpeechTherapy,
-    githubUrl: '#',
-    liveUrl: '#',
+    githubUrl: 'https://github.com/ThisumM05/AI-Based-Speech-Therapy',
+    liveUrl: 'https://thisumm05.github.io/AI-Based-Speech-Therapy/',
   },
   {
     slug: 'online-event-ticketing-system',
@@ -41,8 +41,8 @@ export const projects = [
     tech: ['C#', '.NET', 'React', 'SQL Server'],
     imageUrl: onlineEventTicketingImage,
     animUrl: animStarEvents,
-    githubUrl: 'https://github.com/ThisumM05/StarEvents_Pvt_Ltd_Management_System.git', // TODO: replace with actual GitHub URL
-    liveUrl: 'https://thisumm05.github.io/StarEvents_Pvt_Ltd_Management_System', // TODO: replace with Live Demo or Case Study URL
+    githubUrl: 'https://github.com/ThisumM05/StarEvents_Pvt_Ltd_Management_System',
+    liveUrl: 'https://thisumm05.github.io/StarEvents_Pvt_Ltd_Management_System',
   },
   {
     slug: 'e-shift-management-system',
@@ -51,7 +51,7 @@ export const projects = [
     tech: ['Java', 'Spring', 'MySQL'],
     imageUrl: eShiftManagementImage,
     animUrl: animEShift,
-    githubUrl: 'https://github.com/ThisumM05/Eshift_Management_System.git',
+    githubUrl: 'https://github.com/ThisumM05/Eshift_Management_System',
     liveUrl: '#',
   },
   {
@@ -61,7 +61,7 @@ export const projects = [
     tech: ['C#', '.NET', 'SQL Server'],
     imageUrl: medicareManagementImage,
     animUrl: animMedicare,
-    githubUrl: 'https://github.com/ThisumM05/MediCare_Pvt_Ltd.git',
+    githubUrl: 'https://github.com/ThisumM05/MediCare_Pvt_Ltd',
     liveUrl: '#',
   },
   {
@@ -71,7 +71,7 @@ export const projects = [
     tech: ['React', 'Node.js', 'MySQL'],
     imageUrl: foodhubManagementImage,
     animUrl: animFoodhub,
-    githubUrl: 'https://github.com/ThisumM05/FoodHub_Management_System.git',
+    githubUrl: 'https://github.com/ThisumM05/FoodHub_Management_System',
     liveUrl: '#',
   },
   {
@@ -81,7 +81,7 @@ export const projects = [
     tech: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL'],
     imageUrl: hotelReservationImage,
     animUrl: animFashion,
-    githubUrl: 'https://github.com/ThisumM05/Hotel_Management.git',
+    githubUrl: 'https://github.com/ThisumM05/Hotel_Management',
     liveUrl: 'https://thisumm05.github.io/Hotel_Management',
   },
   {
@@ -90,7 +90,7 @@ export const projects = [
     summary: 'AI-powered farm investment platform with ML-based crop yield prediction.',
     tech: ['React Native', 'Express', 'TypeScript', 'MySQL'],
     animUrl: animFarmInvest,
-    githubUrl: '#',
+    githubUrl: 'https://github.com/ThisumM05/FarmInvest_Lite',
     liveUrl: '#',
   },
 ]

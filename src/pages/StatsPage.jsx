@@ -23,7 +23,10 @@ function recordTodayVisit() {
   const data = JSON.parse(localStorage.getItem(key) || "{}");
   data[today] = (data[today] || 0) + 1;
   const trimmed = Object.fromEntries(
-    Object.keys(data).sort().slice(-14).map((d) => [d, data[d]])
+    Object.keys(data)
+      .sort()
+      .slice(-14)
+      .map((d) => [d, data[d]]),
   );
   localStorage.setItem(key, JSON.stringify(trimmed));
 }
@@ -76,9 +79,15 @@ function StatCard({ label, value, sub, index }) {
       </p>
       <p className="text-5xl font-bold tracking-tight text-white leading-none">
         {value === "…" ? (
-          <span className="text-2xl text-slate-500 animate-pulse">Loading…</span>
+          <span className="text-2xl text-slate-500 animate-pulse">
+            Loading…
+          </span>
         ) : value != null ? (
-          typeof value === "number" ? value.toLocaleString() : value
+          typeof value === "number" ? (
+            value.toLocaleString()
+          ) : (
+            value
+          )
         ) : (
           <span className="text-2xl text-slate-600">—</span>
         )}
@@ -97,7 +106,9 @@ function ChartCard({ title, sub, index, children }) {
       animate="visible"
       className="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-6 backdrop-blur"
     >
-      <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">{title}</p>
+      <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+        {title}
+      </p>
       {sub && <p className="text-[11px] text-slate-600 mt-0.5 mb-4">{sub}</p>}
       {children}
     </motion.div>
@@ -120,13 +131,19 @@ export default function StatsPage() {
         if (!res.ok) throw new Error("non-ok");
         return res.json();
       })
-      .then((data) => { setGcData(data); setLoading(false); })
-      .catch(() => { setApiError(true); setLoading(false); });
+      .then((data) => {
+        setGcData(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setApiError(true);
+        setLoading(false);
+      });
   }, []);
 
-  const totalViews     = loading ? "…" : parseCount(gcData?.count);
+  const totalViews = loading ? "…" : parseCount(gcData?.count);
   const uniqueVisitors = loading ? "…" : parseCount(gcData?.count_unique);
-  const totalChecks    = dailyData.reduce((s, d) => s + d.views, 0) || null;
+  const totalChecks = dailyData.reduce((s, d) => s + d.views, 0) || null;
 
   const monthlyData = (() => {
     const data = JSON.parse(localStorage.getItem("gc_stats_daily") || "{}");
@@ -163,7 +180,6 @@ export default function StatsPage() {
       </header>
 
       <main className="mx-auto max-w-5xl px-6 py-14 flex flex-col gap-10">
-
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -190,8 +206,8 @@ export default function StatsPage() {
           >
             <p className="font-semibold">GoatCounter data unavailable</p>
             <p className="text-xs text-amber-400/70 mt-1">
-              Go to GoatCounter → Settings → enable <strong>Public stats</strong>{" "}
-              → Save. Then refresh this page.
+              Go to GoatCounter → Settings → enable{" "}
+              <strong>Public stats</strong> → Save. Then refresh this page.
             </p>
           </motion.div>
         )}
@@ -229,7 +245,11 @@ export default function StatsPage() {
             {dailyData.length > 0 ? (
               <ResponsiveContainer width="100%" height={200}>
                 <BarChart data={dailyData} barSize={14}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+                  <CartesianGrid
+                    strokeDasharray="3 3"
+                    stroke="#1e293b"
+                    vertical={false}
+                  />
                   <XAxis
                     dataKey="date"
                     tick={{ fontSize: 10, fill: "#64748b" }}
@@ -261,7 +281,11 @@ export default function StatsPage() {
             {monthlyData.length > 0 ? (
               <ResponsiveContainer width="100%" height={200}>
                 <LineChart data={monthlyData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+                  <CartesianGrid
+                    strokeDasharray="3 3"
+                    stroke="#1e293b"
+                    vertical={false}
+                  />
                   <XAxis
                     dataKey="month"
                     tick={{ fontSize: 10, fill: "#64748b" }}
@@ -319,7 +343,6 @@ export default function StatsPage() {
             Open Dashboard →
           </a>
         </motion.div>
-
       </main>
     </div>
   );

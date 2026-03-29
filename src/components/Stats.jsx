@@ -73,14 +73,17 @@ export function Stats() {
       {/* Note about public stats */}
       {!stats && !loading && (
         <p className="mt-4 text-xs text-amber-400/80">
-          No data yet — make sure <strong>Public stats</strong> is enabled in your GoatCounter settings, or visit your portfolio a few times first.
+          No data yet — make sure <strong>Public stats</strong> is enabled in
+          your GoatCounter settings, or visit your portfolio a few times first.
         </p>
       )}
 
       {/* Link to full dashboard */}
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-5 py-4">
         <div>
-          <p className="text-sm font-medium text-slate-200">Full breakdown available on GoatCounter</p>
+          <p className="text-sm font-medium text-slate-200">
+            Full breakdown available on GoatCounter
+          </p>
           <p className="text-xs text-slate-400 mt-0.5">
             Referrers (GitHub vs CV vs direct), browsers, countries, daily graph
           </p>

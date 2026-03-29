@@ -4,7 +4,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { Link } from "react-router-dom";
 import cvPdf from "../assets/Thanuja Thisum Madappuli.pdf";
+import { VisitorCount } from "./VisitorCount";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -111,11 +113,21 @@ export function Layout({ children }) {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 md:flex-row">
           <p>
             © {new Date().getFullYear()} Thanuja Thisum Madappuli. All rights
-            reserved.
+            reserved.{" "}
+            <Link
+              to="/stats"
+              className="opacity-20 hover:opacity-60 transition-opacity"
+              aria-label="View portfolio stats"
+            >
+              ·
+            </Link>
           </p>
-          <p className="text-[11px]">
-            Built with React, Tailwind CSS, and Framer Motion.
-          </p>
+          <div className="flex flex-col items-center gap-1 md:items-end">
+            <p className="text-[11px]">
+              Built with React, Tailwind CSS, and Framer Motion.
+            </p>
+            <VisitorCount />
+          </div>
         </div>
       </footer>
     </div>

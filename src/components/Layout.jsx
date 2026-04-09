@@ -51,7 +51,11 @@ export function Layout({ children }) {
           <motion.div
             initial={{ x: -60, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 2.8, ease: [0.22, 0.61, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 2.8,
+              ease: [0.22, 0.61, 0.36, 1],
+            }}
             className="flex items-center gap-2 text-sm font-medium tracking-tight text-slate-200"
           >
             <span className="h-7 w-7 rounded-full bg-gradient-to-tr from-indigo-500 to-indigo-300" />
@@ -67,7 +71,11 @@ export function Layout({ children }) {
             aria-label="Primary navigation"
             initial={{ x: 60, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 2.8, ease: [0.22, 0.61, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 2.8,
+              ease: [0.22, 0.61, 0.36, 1],
+            }}
             className="hidden items-center gap-6 text-xs font-medium text-slate-300 md:flex"
           >
             <a

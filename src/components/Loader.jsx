@@ -1,54 +1,54 @@
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const LINES = [
   { code: 'import { Portfolio } from "./life"', delay: 0 },
   { code: 'const skills = await load("engineering")', delay: 0.4 },
-  { code: 'const projects = compile(ideas)', delay: 0.8 },
-  { code: 'bootstrap(Thanuja.Thisum)', delay: 1.2 },
-]
+  { code: "const projects = compile(ideas)", delay: 0.8 },
+  { code: "bootstrap(Thanuja.Thisum)", delay: 1.2 },
+];
 
 function TypedLine({ text, startDelay }) {
-  const [displayed, setDisplayed] = useState('')
+  const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {
-    let i = 0
+    let i = 0;
     const timeout = setTimeout(() => {
       const interval = setInterval(() => {
-        i++
-        setDisplayed(text.slice(0, i))
-        if (i >= text.length) clearInterval(interval)
-      }, 28)
-      return () => clearInterval(interval)
-    }, startDelay * 1000)
-    return () => clearTimeout(timeout)
-  }, [text, startDelay])
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) clearInterval(interval);
+      }, 28);
+      return () => clearInterval(interval);
+    }, startDelay * 1000);
+    return () => clearTimeout(timeout);
+  }, [text, startDelay]);
 
   return (
     <div className="flex items-center gap-2 font-mono text-xs sm:text-sm leading-relaxed">
-      <span className="text-indigo-400 select-none">{'>'}</span>
+      <span className="text-indigo-400 select-none">{">"}</span>
       <span className="text-slate-300">{displayed}</span>
       {displayed.length < text.length && (
         <span className="inline-block w-[2px] h-[1em] bg-indigo-400 animate-pulse" />
       )}
     </div>
-  )
+  );
 }
 
 export function Loader({ onDone }) {
-  const [exiting, setExiting] = useState(false)
+  const [exiting, setExiting] = useState(false);
 
   // total duration: last line starts at 1.2s, ~0.85s to type → done ~2.1s, exit at 2.4s
   useEffect(() => {
-    const t = setTimeout(() => setExiting(true), 2600)
-    return () => clearTimeout(t)
-  }, [])
+    const t = setTimeout(() => setExiting(true), 2600);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
-    if (!exiting) return
-    const t = setTimeout(onDone, 700)
-    return () => clearTimeout(t)
-  }, [exiting, onDone])
+    if (!exiting) return;
+    const t = setTimeout(onDone, 700);
+    return () => clearTimeout(t);
+  }, [exiting, onDone]);
 
   return (
     <AnimatePresence>
@@ -75,20 +75,26 @@ export function Loader({ onDone }) {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 select-none"
           >
-            <span className="text-4xl font-light text-indigo-400/70 font-mono">{'{'}</span>
+            <span className="text-4xl font-light text-indigo-400/70 font-mono">
+              {"{"}
+            </span>
             <div className="flex flex-col items-center gap-1">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-mono">initializing</span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-mono">
+                initializing
+              </span>
               {/* progress bar */}
               <div className="relative h-[2px] w-40 rounded-full bg-slate-800 overflow-hidden">
                 <motion.div
                   className="absolute inset-y-0 left-0 bg-indigo-500 rounded-full"
-                  initial={{ width: '0%' }}
-                  animate={{ width: '100%' }}
-                  transition={{ duration: 2.4, ease: 'linear' }}
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 2.4, ease: "linear" }}
                 />
               </div>
             </div>
-            <span className="text-4xl font-light text-indigo-400/70 font-mono">{'}'}</span>
+            <span className="text-4xl font-light text-indigo-400/70 font-mono">
+              {"}"}
+            </span>
           </motion.div>
 
           {/* typed lines */}
@@ -123,5 +129,5 @@ export function Loader({ onDone }) {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

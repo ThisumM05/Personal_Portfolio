@@ -6,12 +6,21 @@ import { MagneticButton } from "./MagneticButton";
 import profileImage from "../assets/images.jpg";
 import cvPdf from "../assets/Thanuja Thisum Madappuli.pdf";
 
-const heroVariants = {
-  hidden: { opacity: 0, y: 24 },
+const heroLeftVariants = {
+  hidden: { opacity: 0, x: -60 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+    x: 0,
+    transition: { duration: 0.7, delay: 2.8, ease: [0.22, 0.61, 0.36, 1] },
+  },
+};
+
+const heroRightVariants = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, delay: 2.8, ease: [0.22, 0.61, 0.36, 1] },
   },
 };
 
@@ -109,7 +118,7 @@ export function Hero() {
 
   return (
     <section className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
-      <MotionDiv variants={heroVariants} className="text-justify">
+      <MotionDiv variants={heroLeftVariants} className="text-justify">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
           <span className="block text-sm font-normal text-indigo-200 sm:text-base">
             Hi, I&apos;m
@@ -167,7 +176,7 @@ export function Hero() {
       </MotionDiv>
 
       <MotionDiv
-        variants={heroVariants}
+        variants={heroRightVariants}
         className="relative max-w-md justify-self-center md:justify-self-end"
       >
         <div className="flex justify-center">

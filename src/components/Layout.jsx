@@ -48,7 +48,12 @@ export function Layout({ children }) {
 
       <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2 text-sm font-medium tracking-tight text-slate-200">
+          <motion.div
+            initial={{ x: -60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 2.8, ease: [0.22, 0.61, 0.36, 1] }}
+            className="flex items-center gap-2 text-sm font-medium tracking-tight text-slate-200"
+          >
             <span className="h-7 w-7 rounded-full bg-gradient-to-tr from-indigo-500 to-indigo-300" />
             <div className="leading-tight">
               <div className="text-xs uppercase tracking-[0.2em] text-slate-400">
@@ -56,10 +61,13 @@ export function Layout({ children }) {
               </div>
               <div>Thanuja Thisum Madappuli</div>
             </div>
-          </div>
+          </motion.div>
 
-          <nav
+          <motion.nav
             aria-label="Primary navigation"
+            initial={{ x: 60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 2.8, ease: [0.22, 0.61, 0.36, 1] }}
             className="hidden items-center gap-6 text-xs font-medium text-slate-300 md:flex"
           >
             <a
@@ -94,7 +102,7 @@ export function Layout({ children }) {
             >
               Download CV
             </a>
-          </nav>
+          </motion.nav>
         </div>
       </header>
 

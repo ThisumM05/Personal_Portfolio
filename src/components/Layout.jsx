@@ -32,7 +32,7 @@ export function Layout({ children }) {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 bg-noise-overlay opacity-40 mix-blend-soft-light"
+          className="absolute inset-0 bg-tech-texture opacity-70 mix-blend-screen"
           aria-hidden="true"
         />
         <motion.div

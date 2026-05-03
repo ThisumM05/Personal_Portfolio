@@ -7,18 +7,54 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+
+# Vite cache
+.vite/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+
+# Local config
 *.local
+
+# Coverage / testing
+coverage/
+.nyc_output/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+desktop.ini
+
+# OS generated files
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Lock files (keep only one – uncomment the ones you don't use)
+# yarn.lock
+# pnpm-lock.yaml
+
+# Scratch / temp files
+svgs.txt
+*.tmp
+*.bak
